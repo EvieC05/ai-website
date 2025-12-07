@@ -1,0 +1,122 @@
+/* Base styles for AI Website */
+:root {
+  --primary-color: #2a2a72;
+  --secondary-color: #009ffd;
+  --background: #f6f6f6;
+  --text-color: #222;
+  --nav-height: 60px;
+  --nav-bg: #fff;
+  --nav-link-color: var(--primary-color);
+  --nav-link-hover: var(--secondary-color);
+  --border-radius: 8px;
+  --font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--background);
+  color: var(--text-color);
+}
+
+nav {
+  height: var(--nav-height);
+  background: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+/* Hamburger menu styles */
+.nav-toggle {
+  display: none;
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-hamburger span {
+  height: 4px;
+  width: 100%;
+  background: var(--primary-color);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1rem;
+  }
+  .nav-links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--nav-bg);
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .nav-links a {
+    padding: 1rem 2rem;
+    border-radius: 0;
+    border-bottom: 1px solid #eee;
+  }
+  .nav-toggle:checked + .nav-hamburger + .nav-links {
+    display: flex;
+  }
+  .nav-hamburger {
+    display: flex;
+  }
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
